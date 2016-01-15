@@ -8,4 +8,12 @@ class EmployeesController < ApplicationController
     @employees = Employee.all
   end
 
+  def contact
+    
+  end
+
+   def submit_form
+    @first_name = params[:first_name]
+    @last_name = params[:last_name]
+  end
 end
