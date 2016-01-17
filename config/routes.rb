@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  get '/one' => 'employees#show_one'
-  get '/all' => 'employees#show_all'
+
+  get '/employees/new' => 'employees#new'
+  get '/employees' => 'employees#index'
+  get '/employees/:id' => 'employees#show'
+  post '/employees' => 'employees#create'
+  get '/employees/:id/edit' => 'employees#edit'
+  patch '/employees/:id' => 'employees#update'
 
   get '/contact_form' => 'employees#contact'
   post '/submit' => 'employees#submit_form'

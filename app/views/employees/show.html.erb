@@ -1,0 +1,10 @@
+<h1>Show Empoyee</h1>
+
+<h3> <%= @employee.first_name%> </h3>
+<h3> <%= @employee.last_name%> </h3>
+<h3> <%= @employee.email%> </h3>
+<h3> <%= @employee.phone_number%> </h3>
+<h3> <%= @employee.gender%> </h3>
+
+<a href='/employees/<%= @employee.id %>/edit'>Edit</a>
+<a href='/employees/'>Return to Employee List</a>

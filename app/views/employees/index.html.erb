@@ -1,0 +1,11 @@
+<h1>All Employees</h1>
+
+<% @employees.each do |employee| %>
+  <h3> Employee Record ID <%= employee.id %> : </h3>
+  <h3> <%= employee.first_name %> </h3>
+  <h3> <%= employee.last_name %> </h3>
+  <h3> <%= employee.email %> </h3>
+  <h3> <%= employee.job_title %> </h3>
+  <a href='/employees/<%= employee.id %>/edit'>Edit</a>
+  <h3> ------- </h3>
+<% end %>
