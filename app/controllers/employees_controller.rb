@@ -37,6 +37,10 @@ class EmployeesController < ApplicationController
                               gender: params[:gender]})    
   end
 
+  def destroy
+    @employee = Employee.find(params[:id])
+    @employee.destroy
+  end
 
   def contact
     

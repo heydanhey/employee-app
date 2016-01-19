@@ -7,5 +7,8 @@
   <h3> <%= employee.email %> </h3>
   <h3> <%= employee.job_title %> </h3>
   <a href='/employees/<%= employee.id %>/edit'>Edit</a>
+  <a data-confirm="Are You Sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a>
   <h3> ------- </h3>
 <% end %>
+
+<a href='/employees/new'>Add New</a>
