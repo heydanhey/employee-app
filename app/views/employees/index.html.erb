@@ -1,14 +1,19 @@
 <h1>All Employees</h1>
-
-<% @employees.each do |employee| %>
-  <h3> Employee Record ID <%= employee.id %> : </h3>
-  <h3> <%= employee.first_name %> </h3>
-  <h3> <%= employee.last_name %> </h3>
-  <h3> <%= employee.email %> </h3>
-  <h3> <%= employee.job_title %> </h3>
-  <a href='/employees/<%= employee.id %>/edit'>Edit</a>
-  <a data-confirm="Are You Sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a>
-  <h3> ------- </h3>
-<% end %>
+<div class="row">
+  <% @employees.each do |employee| %>
+  <div class="col-md-4 list-view">
+    <h3><%= link_to "Employee Record ID #{employee.id}", "/employees/#{employee.id}" %>: </h3>
+    <h3> <%= employee.first_name %> </h3>
+    <h3> <%= employee.last_name %> </h3>
+    <h3> <%= employee.email %> </h3>
+    <h3> <%= employee.add_japanese_prefix %> </h3>
+    <h3> <%= employee.job_title %> </h3>
+    <img src="http://www.farmtoschool.org/images/generic-profile.png"><br>
+    <a href='/employees/<%= employee.id %>/edit'>Edit</a>
+    <a data-confirm="Are You Sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a>
+    <h3> ------- </h3>
+    </div>
+  <% end %>
+</div>
 
 <a href='/employees/new'>Add New</a>
