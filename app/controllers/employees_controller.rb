@@ -13,12 +13,14 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.create({first_name: params[:first_name],
+                              middle_name: params[:middle_name],
                               last_name: params[:last_name],
                               email: params[:email],
                               job_title: params[:job_title],
                               salary: params[:salary],
                               phone_number: params[:phone_number],
-                              gender: params[:gender]})
+                              gender: params[:gender],
+                              bio: params[:bio]})
   end
 
   def edit
@@ -29,12 +31,14 @@ class EmployeesController < ApplicationController
     @employee = Employee.find(params[:id])
 
     @employee.update({first_name: params[:first_name],
+                              middle_name: params[:middle_name],
                               last_name: params[:last_name],
                               email: params[:email],
                               job_title: params[:job_title],
                               salary: params[:salary],
                               phone_number: params[:phone_number],
-                              gender: params[:gender]})    
+                              gender: params[:gender],
+                              bio: params[:bio]})    
   end
 
   def destroy

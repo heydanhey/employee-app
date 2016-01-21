@@ -1,19 +1,30 @@
 <h1>All Employees</h1>
-<div class="row">
+<table class="table">
+  <thead>
+    <tr>
+      <th>id#</th>
+      <th>First Name</th>
+      <th>Middle Name</th>
+      <th>Last Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Job Title</th>
+    </tr>
+  </thead>
+  <tbody>
   <% @employees.each do |employee| %>
-  <div class="col-md-4 list-view">
-    <h3><%= link_to "Employee Record ID #{employee.id}", "/employees/#{employee.id}" %>: </h3>
-    <h3> <%= employee.first_name %> </h3>
-    <h3> <%= employee.last_name %> </h3>
-    <h3> <%= employee.email %> </h3>
-    <h3> <%= employee.add_japanese_prefix %> </h3>
-    <h3> <%= employee.job_title %> </h3>
-    <img src="http://www.farmtoschool.org/images/generic-profile.png"><br>
-    <a href='/employees/<%= employee.id %>/edit'>Edit</a>
-    <a data-confirm="Are You Sure?" data-method="delete" href="/employees/<%= employee.id %>" rel="nofollow">Delete</a>
-    <h3> ------- </h3>
-    </div>
+    <tr>
+      <th scope="row"><<%= link_to "#{employee.id}", "/employees/#{employee.id}" %> </th>
+      <td><%= employee.first_name %></td>
+      <td><%= employee.middle_name %></td>
+      <td><%= employee.last_name %></td>
+      <td><%= employee.email %></td>
+      <td><%= employee.phone_number %></td>
+      <td><%= employee.job_title %></td>
+    </tr>
   <% end %>
-</div>
+  </tbody>
+</table>
+  
 
 <a href='/employees/new'>Add New</a>

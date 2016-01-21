@@ -1,15 +1,16 @@
-<h1>Show Empoyee</h1>
-
-<h3> <%= @employee.first_name%> </h3>
-<h3> <%= @employee.last_name%> </h3>
-<h3> <%= @employee.email%> </h3>
-<h3> <%= @employee.add_japanese_prefix %> </h3>
-<h3> <%= @employee.gender%> </h3>
+<h1>Show Employee</h1>
 
 <h2> Full name: <%= @employee.full_name %> </h2>
+<h3> Middle name: <%= @employee.middle_name %> </h3>
+<h4> Email: <%= @employee.email%> </h4>
+<h4> Phone: <%= @employee.add_japanese_prefix %> </h4>
+<h4> Gender: <%= @employee.gender%> </h4>
+<p> Biography: <%= @employee.bio%> </p>
+
+
 <img src="http://www.farmtoschool.org/images/generic-profile.png"><br>
 
-<h4> Updated on: <%= @employee.friendly_updated_at %> </h4>
+<h5> Updated on: <%= @employee.friendly_updated_at %> </h5>
 
 <a href='/employees/<%= @employee.id %>/edit'>Edit</a>
 <%= link_to "Delete", "employees/#{@employee.id}", method: :delete, data:{confirm: "Are you Sure?"} %><br>
