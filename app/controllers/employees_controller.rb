@@ -2,6 +2,11 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
+
+    if params[:sort]
+      @employees = Employee.order(:last_name)
+    end
+
   end
 
   def show
@@ -30,6 +35,14 @@ class EmployeesController < ApplicationController
   def update
     @employee = Employee.find(params[:id])
 
+    @address = params[:address]
+
+    if @address != nil
+      coordinates = Geocoder.coordinates(@address)
+    else
+      @address = [0,0]
+    end
+
     @employee.update({first_name: params[:first_name],
                               middle_name: params[:middle_name],
                               last_name: params[:last_name],
@@ -38,7 +51,9 @@ class EmployeesController < ApplicationController
                               salary: params[:salary],
                               phone_number: params[:phone_number],
                               gender: params[:gender],
-                              bio: params[:bio]})    
+                              bio: params[:bio],
+                              latitude: coordinates[0],
+                              longitude: coordinates[1]})    
   end
 
   def destroy

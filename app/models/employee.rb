@@ -12,4 +12,9 @@ class Employee < ActiveRecord::Base
   def add_japanese_prefix
     "+81 #{phone_number}"
   end
+
+  # def address_coords(address)
+  #   geocoded_by :address
+  #   after_validation :geocode
+  # end
 end
