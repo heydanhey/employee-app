@@ -7,10 +7,15 @@ class EmployeesController < ApplicationController
       @employees = Employee.order(:last_name)
     end
 
+    if params[:group]
+      @employees = Group.find_by(name: params[:group]).employees
+    end
+
   end
 
   def show
       @employee = Employee.find(params[:id])
+      @groups = @contact.group
   end
 
   def new

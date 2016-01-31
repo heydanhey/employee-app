@@ -5,6 +5,13 @@
 <h4> Email: <%= @employee.email%> </h4>
 <h4> Phone: <%= @employee.add_japanese_prefix %> </h4>
 <h4> Gender: <%= @employee.gender%> </h4>
+
+<p> Your Groups:
+<% @employee.groups.each do |group| %>
+  <%= group.name %> 
+<% end %>
+</p>
+
 <p> Biography: <%= @employee.bio%> </p>
 <p> Latitude: <%= @employee.latitude %> </p>
 <p> Longitude: <%= @employee.longitude %> </p>

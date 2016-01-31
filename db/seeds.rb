@@ -1,7 +1,8 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+Employee.create!([
+  {first_name: "Daniel", last_name: "High", email: "dan@gmail.com", job_title: "Dog Walker", salary: "100,000,000", phone_number: "773-750-8874", gender: "Male", middle_name: "Joseph", bio: "A nice guy", latitude: 41.970761, longitude: -87.721621, user_id: 3},
+  {first_name: "Liz", last_name: "Lund", email: "beth@gmail.com", job_title: "Cat Trainer", salary: "300,000", phone_number: "312-224-5464", gender: "Female", middle_name: "Jane", bio: "The Banker horse is a small, hardy, and docile feral horse (Equus ferus caballus) living on barrier islands in North Carolina's Outer Banks. Descended from domesticated Spanish horses and possibly brought to the Americas in the 16th century, the foundation bloodstock may have become feral after surviving shipwrecks or being abandoned on the islands by one of the exploratory expeditions led by Lucas Vázquez de Ayllón or Sir Richard Grenville. Populations are found in the Rachel Carson Estuarine Sanctuary and on Ocracoke Island, Shackleford Banks, and Currituck Banks. Although not considered indigenous to the islands, Bankers are allowed to remain because of their historical significance. They survive by grazing on marsh grasses—for water as well as food—supplemented by temporary freshwater pools. To prevent overpopulation and inbreeding, and to protect their habitat from overgrazing, the horses are managed by the National Park Service, the State of North Carolina, and private organizations; populations are limited through adoptions and birth control. Bankers taken from the wild and trained have been used for trail riding, driving, and mounted patrols. (Full article...)", latitude: 41.881618, longitude: -87.6333318, user_id: 3},
+  {first_name: "Sam", last_name: "Stauber", email: "staubs@yahoo.com", job_title: "Animal Whisperer", salary: "23", phone_number: "555-123-7521", gender: "Female", middle_name: nil, bio: nil, latitude: nil, longitude: nil, user_id: 1},
+  {first_name: "Carissa", last_name: "Kinyon", email: "rissakin@msn.com", job_title: "Animal Chef", salary: "34,000", phone_number: "847-323-4444", gender: "Female", middle_name: "Michelle", bio: "", latitude: 30.4162796, longitude: -95.5619534, user_id: 1},
+  {first_name: "John", last_name: "Smith", email: "smith@frank.com", job_title: "Assasin", salary: "3333333", phone_number: "333-222-1111", gender: "female", middle_name: nil, bio: nil, latitude: nil, longitude: nil, user_id: 1},
+  {first_name: "Ray", last_name: "Rzeszutko", email: "ray@nshn.com", job_title: "Manager", salary: "99,000", phone_number: "312-322-4455", gender: "male", middle_name: "Chester", bio: "", latitude: 41.881618, longitude: -87.6333318, user_id: 1}
+])
