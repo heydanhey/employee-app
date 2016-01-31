@@ -10,7 +10,7 @@ class EmployeesController < ApplicationController
   end
 
   def show
-    @employee = Employee.find(params[:id])
+      @employee = Employee.find(params[:id])
   end
 
   def new
@@ -25,7 +25,9 @@ class EmployeesController < ApplicationController
                               salary: params[:salary],
                               phone_number: params[:phone_number],
                               gender: params[:gender],
-                              bio: params[:bio]})
+                              bio: params[:bio],
+                              user_id: current_user.id})
+    redirect_to "/"
   end
 
   def edit
@@ -53,12 +55,17 @@ class EmployeesController < ApplicationController
                               gender: params[:gender],
                               bio: params[:bio],
                               latitude: coordinates[0],
-                              longitude: coordinates[1]})    
+                              longitude: coordinates[1],
+                              user_id: current_user.id})
+
+    redirect_to "/"    
   end
 
   def destroy
     @employee = Employee.find(params[:id])
     @employee.destroy
+
+    redirect_to '/'
   end
 
   def contact

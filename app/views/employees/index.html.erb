@@ -1,4 +1,5 @@
 <h1>All Employees</h1>
+<% if current_user %>
 <table class="table">
   <thead>
     <tr>
@@ -9,22 +10,29 @@
       <th>Email</th>
       <th>Phone Number</th>
       <th>Job Title</th>
+      <th>Add/Edited by</th>
     </tr>
   </thead>
   <tbody>
-  <% @employees.each do |employee| %>
-    <tr>
-      <th scope="row"><%= link_to "#{employee.id}", "/employees/#{employee.id}" %> </th>
-      <td><%= employee.first_name %></td>
-      <td><%= employee.middle_name %></td>
-      <td><%= employee.last_name %></td>
-      <td><%= employee.email %></td>
-      <td><%= employee.phone_number %></td>
-      <td><%= employee.job_title %></td>
+    <% @employees.each do |employee| %>
+      <tr>
+        <% if current_user.id == employee.user.id %>
+          <th scope="row"><%= link_to "#{employee.id}", "/employees/#{employee.id}" %> </th>
+          <td><%= employee.first_name %></td>
+          <td><%= employee.middle_name %></td>
+          <td><%= employee.last_name %></td>
+          <td><%= employee.email %></td>
+          <td><%= employee.phone_number %></td>
+          <td><%= employee.job_title %></td>
+          <td><%= employee.user.email %></td>
+        <% end %>
     </tr>
-  <% end %>
+    <% end %>
   </tbody>
 </table>
+<% else %>
+  <p> You Must be logged in to view employees </p>
+<% end %>
   
 
 <a href='/employees/new'>Add New</a>

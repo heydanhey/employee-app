@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
 
+  devise_for :users
+  root 'employees#index'
+
   get '/employees/new' => 'employees#new'
-  get '/employees' => 'employees#index'
+  #get '/employees' => 'employees#index'
   get '/employees/:id' => 'employees#show'
   post '/employees' => 'employees#create'
   get '/employees/:id/edit' => 'employees#edit'

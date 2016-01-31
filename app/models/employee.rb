@@ -1,5 +1,6 @@
 class Employee < ActiveRecord::Base
   # add methods here
+  belongs_to :user
 
   def friendly_updated_at
     updated_at.strftime("%b %d, %Y")

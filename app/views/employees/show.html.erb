@@ -8,6 +8,7 @@
 <p> Biography: <%= @employee.bio%> </p>
 <p> Latitude: <%= @employee.latitude %> </p>
 <p> Longitude: <%= @employee.longitude %> </p>
+<p> Added/Edited by: <%= @employee.user.email %> </p> 
 
 
 <img src="http://www.farmtoschool.org/images/generic-profile.png"><br>
@@ -15,5 +16,5 @@
 <h5> Updated on: <%= @employee.friendly_updated_at %> </h5>
 
 <a href='/employees/<%= @employee.id %>/edit'>Edit</a>
-<%= link_to "Delete", "employees/#{@employee.id}", method: :delete, data:{confirm: "Are you Sure?"} %><br>
+<%= link_to "Delete", "/employees/#{@employee.id}", method: :delete, data:{confirm: "Are you Sure?"} %><br>
 <a href='/employees/'>Return to Employee List</a>
